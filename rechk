@@ -1,0 +1,9 @@
+#!/usr/bin/ruby
+
+re = Regexp.compile(ARGV[0])
+f = open(ARGV[1])
+r = ''
+
+f.each do |l|
+    p r if r = re =~ l
+end
