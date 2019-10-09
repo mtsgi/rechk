@@ -2,8 +2,12 @@
 
 re = Regexp.compile(ARGV[0])
 f = open(ARGV[1])
-r = ''
+r = nil
+c = 0
 
 f.each do |l|
-    p r if r = re =~ l
+    c += 1 if r = re =~ l
 end
+
+p c
+f.close
