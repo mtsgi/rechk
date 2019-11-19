@@ -1,7 +1,13 @@
 #!/usr/bin/ruby
 
-re = Regexp.compile(ARGV[0])
-f = open(ARGV[1])
+begin
+    re = Regexp.compile(ARGV[0].to_s)
+    f = open(ARGV[1].to_s)
+rescue => exception
+    puts "RECHK-Error\t" + $!.to_s
+    exit
+end
+
 r = nil
 c = 0
 
